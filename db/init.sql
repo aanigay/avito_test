@@ -45,18 +45,11 @@ INSERT INTO users (name)
 VALUES
     ('admin'),
     ('root'),
-    ('user');
-
-INSERT INTO segments (slug)
-VALUES
-    ('AVITO_VOICE_MESSAGES'),
-    ('AVITO_SALE_30'),
-    ('AVITO_SALE_70');
-
-INSERT INTO users_segments (user_id, segment_id, created_at)
-VALUES
-    (1, 1, now()),
-    (1, 2, now()),
-    (2, 3, now()),
-    (3, 2, now()),
-    (3, 3, now());
+    ('user'),
+    ('petya'),
+    ('sasha'),
+    ('test1'),
+    ('test2'),
+    ('xxxx'),
+    ('uyyyy'),
+    ('tenth_user');

@@ -93,13 +93,14 @@ func (r *repository) AddUserToSegments(context context.Context, req UpdateSegmen
 		}
 		temp := now.Add(time.Duration(dur))
 		ttl = &temp
-
 	}
 	for _, slug := range req.AddSegments {
 		query += "(?, (SELECT id FROM segments WHERE slug = ?), ?, ?),"
 		vals = append(vals, req.UserId, slug, now, ttl)
 	}
 	query = query[0 : len(query)-1]
+	query += "on conflict(segment_id, user_id) do update SET ttl = ?;"
+	vals = append(vals, ttl)
 	query = ReplaceSQL(query, "?")
 	stmt, err := r.db.PrepareContext(context, query)
 	if err != nil {

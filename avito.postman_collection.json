@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "26993d84-de8a-4eb3-bf49-04c752df2c7b",
+		"name": "avito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14080284"
+	},
+	"item": [
+		{
+			"name": "create segment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slug\": \"AVITO_TEST_SEGMENT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/createSegment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"createSegment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete segment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slug\": \"AVITO_TEST_SEGMENT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/deleteSegment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"deleteSegment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update segments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"add_segments\": [\"AVITO_TEST_SEGMENT\"],\n    \"delete_segments\": [],\n    \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/updateSegments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"updateSegments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update segments with ttl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"add_segments\": [\"AVITO_TEST_SEGMENT\"],\n    \"delete_segments\": [],\n    \"user_id\": 1,\n    \"ttl\": \"3m\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/updateSegments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"updateSegments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get segments by user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/getSegmentsByUserId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"getSegmentsByUserId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get report link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/report/2023-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"report",
+						"2023-08"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create segment with users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slug\": \"AVITO_TEST_AUTO\",\n    \"percent\": 60\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/createSegmentsWithUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"createSegmentsWithUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create segment with users with ttl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slug\": \"AVITO_TEST_AUTO_WITH_TTL\",\n    \"percent\": 60,\n    \"ttl\": \"5m\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/createSegmentsWithUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"createSegmentsWithUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
